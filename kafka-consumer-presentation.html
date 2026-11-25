@@ -318,7 +318,7 @@
         <p class="lead">컨슈머에서 Kafka의 프로듀서 메시지를 읽고 InfluxDB에 저장하는 서비스</p>
         <div style="margin-top:25px"><span class="pill">Spring Boot</span><span class="pill">Kafka</span><span
                 class="pill">InfluxDB</span></div>
-        <div class="notes">발표 시작: “이 서비스가 데이터 메시지를 어떻게 받고 처리하는지, 코드 흐름과 Kafka 개념을 연결해 설명하겠습니다.”</div>
+        <div class="notes">발표 시작: “이 서비스가 데이터 메시지를 어떻게 받고 처리하는지, 코드 흐름과 Kafka 개념을 연결”</div>
     </section>
     <section class="slide">
         <div class="eyebrow">01 · 한눈에 보기</div>
@@ -426,8 +426,7 @@
                 <p>도착한 레코드를 처리</p></div>
         </div>
         <div class="code">ConsumerRecord&lt;String, String&gt; → JSON 파싱 → Point 생성 → influxDB.write(...)</div>
-        <div class="notes">앱에서 KafkaAutoConfiguration을 제외하고 직접 ConsumerFactory와 KafkaMessageListenerContainer를 만듭니다.
-            컨테이너는 autoStartup=false라서 Runner가 직접 시작합니다.
+        <div class="notes">직접 KafkaMessageListenerContainer를 만들고, 컨테이너는 브로커를 통해 메시지를 읽어서 처리
         </div>
     </section>
     <section class="slide">
